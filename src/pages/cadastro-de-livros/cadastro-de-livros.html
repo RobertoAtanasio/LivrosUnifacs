@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar>
+    <!-- Button voltar -->
+    <ion-buttons left>
+      <button ion-button icon-only clear small (click)="voltarPagina()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons start>
+      <button ion-button></button>
+    </ion-buttons>
+    <ion-title>
+      Cadastro de Livros
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <ion-list no-lines>
+
+    <ion-item class="clear block">
+      <ion-label color="primary" stacked>Título</ion-label>
+      <ion-input type="text" placeholder="Título do livro" [(ngModel)]="livro.titulo"></ion-input>
+    </ion-item>
+
+    <ion-item class="block">
+      <ion-label color="primary" stacked>ISBN</ion-label>
+      <ion-input type="text" placeholder="ISBN do livro" [(ngModel)]="livro.isbn"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Editora</ion-label>
+      <ion-select [(ngModel)]="livro.editora">
+        <!--<ion-option *ngFor="#editora of listaEditoras" [value]="editora.id" [checked]="false">{{editora.nome}}</ion-option>-->
+        <ion-option *ngFor="let editora of listaEditoras" [value]="editora.nome">{{editora.nome}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Autor</ion-label>
+      <ion-input type="text" placeholder="Autor" [(ngModel)]="livro.autor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Páginas</ion-label>
+      <ion-input type="number" placeholder="Número de páginas" [(ngModel)]="livro.num_paginas"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Gênero</ion-label>
+      <ion-select name="Gênero" [(ngModel)]="livro.genero"></ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Preço</ion-label>
+      <ion-input type="text" placeholder="Preço (R$)" [(ngModel)]="livro.preco"></ion-input>
+    </ion-item>
+
+    <button ion-button color="positive" block (click)="salvar()">Salvar</button>
+
+  </ion-list>
+
+</ion-content>

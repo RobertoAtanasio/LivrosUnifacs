@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+     <button ion-button icon-only small clear (click) = "voltaPagina()">
+       <ion-icon name = "arrow-back"></ion-icon>
+     </button>
+   </ion-buttons>
+    <ion-title>
+      Cadastro editora
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page8">
+  <ion-list no-lines>
+     <ion-item>
+       <ion-label stacked>Nome</ion-label>
+       <ion-input required placeholder = "Nome da editora" type="text" [(ngModel)]="editora.nome"></ion-input>
+     </ion-item>
+
+     <ion-item>
+       <ion-label stacked>endereco</ion-label>
+       <ion-input placeholder = "endereço" type="text" [(ngModel)]="editora.endereco"></ion-input>
+     </ion-item>
+
+     <ion-item>
+       <ion-input placeholder = "id" type="hidden" [(ngModel)]="editora.id"></ion-input>
+     </ion-item>
+   </ion-list>
+   <button ion-button block (click) = "salvar()">Salvar</button>
+</ion-content>
